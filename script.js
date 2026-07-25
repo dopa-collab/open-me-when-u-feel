@@ -72,7 +72,7 @@ const MOODS = [
    This is the one extra letter that shows up when the gift box on the
    main screen is tapped.
    ===================================================================== */
-const SURPRISE_LETTER = "this is a reminder in case u forget bear with me i wanna let u know how much u mean to me and anyone else and how important u r that words cantbe enough to express how much i said it aloot and ill keep saying  u r an ineffable person with a beautiful soul and surly pure heart and beautiful smile hope life brings u happiness and more and whenever something goof happens to u know that u r worthy of it and more and u r never forgotten i know i cant help help much but thers always a place for you and words cant help aloot too but i mean every word ive said and im by ur side hope u achive all ur gals and live a happy beautiful life";
+const SURPRISE_LETTER = "this is a reminder in case u forget bear with me i wanna let u know how much u mean to me and anyone else and how important u r that words cantbe enough to express how much i said it aloot and ill keep saying  u r an ineffable person with a beautiful soul and surly pure heart and beautiful smile hope life brings u happiness and more and whenever something good happens to u know that u r worthy of it and more and u r never forgotten i know i cant help help much but thers always a place for you and words cant help aloot too but i mean every word ive said and im by ur side hope u achive all ur gals and live a happy beautiful life";
 
 /* ===================================================================== */
 
