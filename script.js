@@ -67,6 +67,15 @@ const MOODS = [
 
 /* ===================================================================== */
 
+/* =====================================================================
+   EDIT ME: the surprise box letter
+   This is the one extra letter that shows up when the gift box on the
+   main screen is tapped.
+   ===================================================================== */
+const SURPRISE_LETTER = "this is a reminder in case u forget bear with me i wanna let u know how much u mean to me and anyone else and how important u r that words cantbe enough to express how much i said it aloot and ill keep saying  u r an ineffable person with a beautiful soul and surly pure heart and beautiful smile hope life brings u happiness and more and whenever something goof happens to u know that u r worthy of it and more and u r never forgotten i know i cant help help much but thers always a place for you and words cant help aloot too but i mean every word ive said and im by ur side hope u achive all ur gals and live a happy beautiful life";
+
+/* ===================================================================== */
+
 const screens = {
   password: document.getElementById("screen-password"),
   envelope: document.getElementById("screen-envelope"),
@@ -171,6 +180,9 @@ function renderLetter() {
   modalMoodLabel.textContent = currentMood.label;
   modalMoodText.innerHTML = `<p>${letters[currentLetterIndex]}</p>`;
 
+  const letterNav = document.querySelector(".letter-nav");
+  letterNav.style.display = letters.length > 1 ? "flex" : "none";
+
   // dots
   letterDots.innerHTML = "";
   letters.forEach((_, i) => {
@@ -219,6 +231,17 @@ document.getElementById("rereadLetter").addEventListener("click", () => {
 
 document.getElementById("changeTheme").addEventListener("click", () => {
   showScreen("theme");
+});
+
+/* ---- Surprise box ---- */
+const surpriseBox = document.getElementById("surpriseBox");
+
+surpriseBox.addEventListener("click", () => {
+  surpriseBox.classList.remove("is-popping");
+  void surpriseBox.offsetWidth; // restart animation on repeated taps
+  surpriseBox.classList.add("is-popping");
+
+  openMoodModal({ label: "just because", letters: [SURPRISE_LETTER] });
 });
 
 /* ---- Initial state ---- */
