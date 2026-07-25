@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-blue">
+
+  <!-- ============================================================= -->
+  <!-- SCREEN 0: PASSWORD — shown before anything else                -->
+  <!-- ============================================================= -->
+  <section id="screen-password" class="screen screen--active">
+    <div class="paper paper--narrow">
+      <p class="modal-eyebrow">for her eyes only</p>
+      <form id="passwordForm" class="password-form">
+        <input
+          type="password"
+          id="passwordInput"
+          class="password-input"
+          placeholder="enter the password"
+          autocomplete="off"
+        />
+        <button type="submit" class="btn btn--primary">unlock</button>
+      </form>
+      <p id="passwordError" class="password-error" hidden>that's not quite it — try again</p>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SCREEN 1: ENVELOPE — the first thing she sees                 -->
+  <!-- ============================================================= -->
+  <section id="screen-envelope" class="screen">
+    <div class="envelope-wrap">
+      <p class="envelope-hint">tap the seal</p>
+      <div class="envelope" id="envelope">
+        <div class="envelope__body">
+          <div class="envelope__body-shade"></div>
+        </div>
+        <div class="envelope__flap">
+          <button class="wax-seal" id="waxSeal" aria-label="Open the letter">
+            <span aria-hidden="true">✿</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SCREEN 2: LETTER — full letter text                           -->
+  <!-- ============================================================= -->
+  <section id="screen-letter" class="screen">
+    <div class="paper">
+      <!-- ============================================================= -->
+      <!-- EDIT ME: replace the paragraph(s) below with your own letter. -->
+      <!-- You can add as many <p> lines as you like, it will scroll if  -->
+      <!-- it runs long.                                                 -->
+      <!-- ============================================================= -->
+      <div class="paper__content" id="letterText">
+        <p>Hey bluebell</p>
+        <p>hope u doing well. im writing u this cos i know its been a tough time for u. 
+        and it was hard. im glad that u r doing well now and proud f u that u were strong to get through it 
+        inchallah things will get better and u will be happy again. as alwayd u r never alone nor forgotten. 
+        i will always be here for u. take it easy on ur self 
+        and keep ur self safe</p>
+        <p>[i thought this would make u fell better especially during tough times]</p>
+        <p>— dopa</p>
+      </div>
+      <button class="btn btn--primary" id="closeLetter">close &amp; continue</button>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SCREEN 3: THEME PICKER                                        -->
+  <!-- ============================================================= -->
+  <section id="screen-theme" class="screen">
+    <div class="theme-picker">
+      <h1 class="theme-picker__title">pick your colors</h1>
+      <p class="theme-picker__sub">you can change this anytime</p>
+      <div class="swatches">
+        <button class="swatch swatch--blue" data-theme="theme-blue" aria-label="Blue theme">
+          <span class="swatch__dot"></span><span class="swatch__label">blue</span>
+        </button>
+        <button class="swatch swatch--pink" data-theme="theme-pink" aria-label="Pink theme">
+          <span class="swatch__dot"></span><span class="swatch__label">pink</span>
+        </button>
+        <button class="swatch swatch--white" data-theme="theme-white" aria-label="White theme">
+          <span class="swatch__dot"></span><span class="swatch__label">white</span>
+        </button>
+        <button class="swatch swatch--green" data-theme="theme-green" aria-label="Green theme">
+          <span class="swatch__dot"></span><span class="swatch__label">green</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SCREEN 4: MAIN — "open me when you feel..."                   -->
+  <!-- ============================================================= -->
+  <section id="screen-main" class="screen">
+    <div class="main-wrap">
+      <h1 class="main-title">open me when you feel...</h1>
+      <p class="main-sub">tap a card, whenever you need it</p>
+
+      <div class="mood-grid" id="moodGrid">
+        <!-- Cards are generated from the MOODS list in script.js -->
+      </div>
+
+      <div class="footer-links">
+        <button class="link-btn" id="rereadLetter">reread the letter</button>
+        <button class="link-btn" id="changeTheme">change colors</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- MOOD MESSAGE MODAL                                            -->
+  <!-- ============================================================= -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="paper paper--modal">
+      <p class="modal-eyebrow" id="modalMoodLabel">sad</p>
+      <div class="paper__content" id="modalMoodText"></div>
+
+      <div class="letter-nav">
+        <button class="letter-nav__arrow" id="prevLetter" aria-label="Previous letter">‹</button>
+        <div class="letter-nav__dots" id="letterDots"></div>
+        <button class="letter-nav__arrow" id="nextLetter" aria-label="Next letter">›</button>
+      </div>
+
+      <button class="btn btn--primary" id="closeModal">close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
