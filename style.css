@@ -408,6 +408,94 @@ p { margin: 0 0 1em; }
   color: var(--accent);
 }
 
+/* ---- Surprise box ---- */
+.gift-box {
+  position: relative;
+  width: 76px;
+  height: 62px;
+  margin: 38px auto 0;
+  display: block;
+  transition: transform 0.15s ease;
+}
+
+.gift-box:hover {
+  transform: translateY(-3px);
+}
+
+.gift-box.is-popping {
+  animation: box-pop 0.4s ease;
+}
+
+@keyframes box-pop {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(0.92); }
+  65%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.gift-box__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background: var(--accent);
+  border-radius: 5px;
+  box-shadow: 0 12px 24px var(--shadow);
+}
+
+.gift-box__body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 10px;
+  transform: translateX(-50%);
+  background: var(--paper);
+  opacity: 0.85;
+}
+
+.gift-box__lid {
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  right: -5px;
+  height: 15px;
+  background: var(--accent-dark);
+  border-radius: 4px;
+  transform-origin: top center;
+  transition: transform 0.25s ease;
+}
+
+.gift-box__lid::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translateX(-50%);
+  background: var(--accent-dark);
+  border-radius: 4px;
+}
+
+.gift-box:hover .gift-box__lid,
+.gift-box:focus-visible .gift-box__lid {
+  transform: translateY(-3px) rotate(-3deg);
+}
+
+.gift-box__label {
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent-dark);
+  opacity: 0.85;
+  margin-top: 10px;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
+}
+
 .footer-links {
   margin-top: 40px;
   display: flex;
